@@ -1,0 +1,53 @@
+<div id="tarjeta">
+  <div class="card mx-auto" style="width: 350px">
+    <div id="foto">
+      <img
+        *ngIf="mostrar == true"
+        src="https://scontent.fsjo8-1.fna.fbcdn.net/v/t39.30808-6/292786164_10228574329492070_4913994010171378334_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=l--9VS2qpvQAX_RN7nf&_nc_ht=scontent.fsjo8-1.fna&oh=00_AT-sP6oLpjBvjmvB033RAkCaRjmkG8GrrQPOqc_wurjO-A&oe=635D261D"
+        class="card-img-top"
+        alt=""
+      />
+    </div>
+    <div class="card-body">
+      <h1 class="card-title text-center">Poyecto Final Angular</h1>
+      <h5 class="card-title text-center">Nota Obtenida: {{ nota }}</h5>
+      <h2 class="card-text text-center">Autor:</h2>
+
+      <h4 class="text-center">Emmanuel Pineda Cubero</h4>
+
+      <ul>
+        <li *ngFor="let item of estudios">{{ item }}</li>
+      </ul>
+      <div id="buttons">
+        <button
+          (click)="ocultarYmostrarFoto()"
+          type="button"
+          class="btn btn-primary"
+        >
+          Ocultar o Mostrar Imagen del autor
+        </button>
+      </div>
+      <br />
+      <div id="buttons">
+        <button (click)="disminuirNota()" type="button" class="btn btn-danger">
+          Disminuir Nota
+        </button>
+        <button
+          (click)="incrementarNota()"
+          type="button"
+          class="btn btn-success"
+        >
+          Aumentar Nota
+        </button>
+      </div>
+      <br />
+      <div
+        *ngIf="nota >= 100"
+        class="alert alert-success text-center"
+        role="alert"
+      >
+        EXCELENTE TRABAJO
+      </div>
+    </div>
+  </div>
+</div>

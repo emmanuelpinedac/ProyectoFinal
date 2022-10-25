@@ -1,0 +1,35 @@
+<nav class="navbar navbar-dark navbar-expand-lg p-2 mb-2 bg-dark bg-gradient text-center">
+    <div  id="btns" class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li id="btn" class="nav-item">
+            <a
+              [routerLink]="['home']"
+              class="nav-link active"
+              aria-current="page"
+              href="#"
+              >Home</a
+            >
+          </li>
+          <li id="btn" class="nav-item">
+            <a [routerLink]="['gifs']" class="nav-link active" aria-current="page" href="#">Gifs</a>
+          </li>
+          <li id="btn" class="nav-item">
+            <a [routerLink]="['stickers']" class="nav-link active" aria-current="page" href="#">Stickers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

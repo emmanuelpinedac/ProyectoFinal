@@ -1,0 +1,7 @@
+
+<div class="container row mx-auto" id="gifs">
+    <div class="text-center"> <p>Trending Gifs</p></div>
+    <div class="row" id="gif" *ngFor="let gif of gifs">
+    <img [src]="gif.images.downsized.url" alt="Image" />
+    </div>
+</div>

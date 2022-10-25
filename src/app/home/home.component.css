@@ -1,0 +1,14 @@
+#tarjeta {
+    background-color: rgb(243, 243, 243);
+    padding: 1em;
+    color: black;
+  }
+  #buttons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #foto{
+    height: 350px;
+    
+    
+  }
