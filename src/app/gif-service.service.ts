@@ -13,4 +13,9 @@ export class GifServiceService {
       `https://api.giphy.com/v1/gifs/trending?api_key=${environment.giphyApiKey}&limit=30`
     );
   }
+  getTrendingStickers() {
+    return this.http.get(
+      `https://api.giphy.com/v1/stickers/trending?api_key=${environment.giphyApiKey}&limit=20`
+    );
+  }
 }
