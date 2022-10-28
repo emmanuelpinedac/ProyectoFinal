@@ -1,9 +1,12 @@
-
-#gif{
-    width: 200px;
-    padding: 1em;
-} 
-p{
-    font-size: 70px;
-  
-} 
+#gif {
+  width: 200px;
+  padding: 1em;
+}
+p {
+  font-size: 70px;
+}
+#searchBar {
+  width: 800px;
+  border-radius: 30px;
+  background: rgb(53, 48, 56);
+}

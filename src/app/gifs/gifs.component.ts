@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { GifServiceService } from '../gif-service.service';
 
 @Component({
@@ -6,17 +7,26 @@ import { GifServiceService } from '../gif-service.service';
   templateUrl: './gifs.component.html',
   styleUrls: ['./gifs.component.css'],
 })
-export class GifsComponent implements OnInit {
+export class GifsComponent implements OnInit, OnDestroy {
   gifs: any[] = [];
-  // despues de private, se de la un nombre con sentido y luego aca se llama a
-  // la linea 8 "export class ***GifServiceService*** del TS del gif-service.service"
+  subscription!: Subscription;
+
   constructor(private giftService: GifServiceService) {}
 
   ngOnInit(): void {
-    this.giftService.getTrendingGifs()
-    .subscribe((response: any) => {
-      this.gifs = response.data;
-    });
+    this.giftService.getTrendingGifs();
+    this.subscription = this.giftService
+      .getGifs()
+      .subscribe((response: any) => {
+        this.gifs = response;
+      });
+  }
+  search(searchTerm: string) {
+    if (searchTerm !== '') {
+      this.giftService.searchGifs(searchTerm);
+    }
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
- 

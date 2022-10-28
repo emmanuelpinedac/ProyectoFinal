@@ -1,7 +1,15 @@
+<div class="text-center"><p>Trending Gifs</p></div>
+<div class="text-center">
+  <input
+    id="searchBar"
+    type="text"
+    placeholder="  Search for gif"
+    #gif
+    (keyup.enter)="search(gif.value)"
+  />
+</div>
 <div class="container-fluid row mx-auto" id="gifs">
-  <div class="text-center"> <p>Trending Gifs</p></div>
-  
   <div class="row" id="gif" *ngFor="let gif of gifs">
-  <img [src]="gif.images.downsized.url" alt="Image" />
+    <img [src]="gif.images.downsized.url" alt="Image" />
   </div>
 </div>

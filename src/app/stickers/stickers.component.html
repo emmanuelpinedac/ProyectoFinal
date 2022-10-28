@@ -1,6 +1,9 @@
-<div class="container-fluid row mx-auto" id="'stickers">
-  <div class="text-center"><p>Trending Stickers</p></div>
-  <div id="sticker" *ngFor="let sticker of stickers">
-    <img [src]="sticker.images.downsized.url"alt="Image">
+
+ <div class="text-center"><p>Trending Stickers</p></div>
+ <div class="container-fluid row mx-auto" id="'stickers">
+ 
+  <div class="row"  id="sticker" *ngFor="let sticker of stickers">
+    <img [src]="sticker.images.downsized_medium.url"alt="Image">
   </div>
 </div>
+    
