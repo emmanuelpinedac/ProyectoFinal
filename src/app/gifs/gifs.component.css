@@ -6,7 +6,7 @@ p {
   font-size: 70px;
 }
 #searchBar {
-  width: 800px;
+  width: 80%;
   border-radius: 30px;
   background: rgb(53, 48, 56);
   color: aliceblue;
