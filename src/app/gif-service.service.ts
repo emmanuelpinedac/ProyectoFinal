@@ -12,12 +12,15 @@ export class GifServiceService {
 
   getTrendingStickers() {
     return this.http.get(
-      `https://api.giphy.com/v1/stickers/trending?api_key=${environment.giphyApiKey}&limit=30`
+      `https://api.giphy.com/v1/stickers/trending?api_key=ZKJfMKaIKMXywuzFiYiM1vuSntFcrHNB&limit=30`
     );
   }
 
   getTrendingGifs() {
-    return this.http.get(`https://api.giphy.com/v1/gifs/trending?api_key=${environment.giphyApiKey}&limit=30`)
+    return this.http
+      .get(
+        `https://api.giphy.com/v1/gifs/trending?api_key=ZKJfMKaIKMXywuzFiYiM1vuSntFcrHNB&limit=30`
+      )
       .subscribe((response: any) => {
         this.gifs.next(response.data);
       });
@@ -25,12 +28,14 @@ export class GifServiceService {
 
   searchGifs(gifName: string) {
     return this.http
-      .get(`https://api.giphy.com/v1/gifs/search?q=${gifName}&api_key=${environment.giphyApiKey}&limit=30`)
+      .get(
+        `https://api.giphy.com/v1/gifs/search?q=${gifName}&api_key=ZKJfMKaIKMXywuzFiYiM1vuSntFcrHNB&limit=30`
+      )
       .subscribe((response: any) => {
         this.gifs.next(response.data);
       });
   }
-getGifs(){
-  return this.gifs.asObservable(); 
-}
+  getGifs() {
+    return this.gifs.asObservable();
+  }
 }
